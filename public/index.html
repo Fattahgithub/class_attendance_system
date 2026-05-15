@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Attendance System</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <div class="motion-bg" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <main id="app"></main>
+
+  <template id="login-template">
+    <button class="theme-toggle login-theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+      <span class="theme-icon">D</span>
+      <span class="theme-label">Dark</span>
+    </button>
+    <section class="login-shell">
+      <div class="brand-panel">
+        <div class="brand-mark">
+          <img class="brand-logo brand-logo-dark" src="/assets/abf1.png" alt="ABFATECH logo" />
+          <img class="brand-logo brand-logo-light" src="/assets/abf.png" alt="ABFATECH logo" />
+        </div>
+        <p class="eyebrow">Fingerprint-ready attendance</p>
+        <h2>Class Attendance System</h2>
+        <p class="lede">Role dashboards, live class records, reward marks, issue reporting, and clean reports in one
+          animated workspace.</p>
+        <div class="demo-logins">
+          <button data-demo="admin">Admin</button>
+          <button data-demo="lecturer">Lecturer</button>
+          <button data-demo="student">Student</button>
+        </div>
+      </div>
+
+      <form class="login-card" id="login-form">
+        <div>
+          <p class="eyebrow">Secure access</p>
+          <h2>Sign in</h2>
+        </div>
+        <label>
+          Role
+          <select name="role">
+            <option value="admin">Admin</option>
+            <option value="lecturer">Lecturer</option>
+            <option value="student">Student</option>
+          </select>
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" value="admin@class.local" required />
+        </label>
+        <label>
+          Password
+          <input name="password" type="password" value="admin123" required />
+        </label>
+        <button class="primary-action" type="submit">Enter dashboard</button>
+        <p class="form-note" id="login-note">Try admin@class.local / admin123</p>
+      </form>
+    </section>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+
+</html>

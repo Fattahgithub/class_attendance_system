@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1024" role="img" aria-labelledby="title">
+  <title id="title">ABFATECH logo</title>
+  <rect width="2048" height="1024" fill="transparent"/>
+  <defs>
+    <linearGradient id="gold" x1="510" y1="760" x2="1510" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff1bd"/>
+      <stop offset="0.5" stop-color="#ffc15a"/>
+      <stop offset="1" stop-color="#ff9f00"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#gold)">
+    <path d="M1002 156 1048 194 1190 451 1038 318 976 333 936 444 818 478 830 398 963 201 910 443 1014 412 948 346Z"/>
+    <path d="M977 346 1038 331 1120 407 1088 502 1000 527 929 453Z" opacity=".92"/>
+    <path d="M868 510 1086 510 1208 461 1280 532 1170 576 842 574Z"/>
+  </g>
+  <rect x="500" y="598" width="1048" height="154" fill="none" stroke="url(#gold)" stroke-width="6"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M550 718 612 626 674 718"/>
+    <path d="M708 626H790Q820 626 820 656T790 686H708M708 686H798Q830 686 830 718H708"/>
+    <path d="M870 718V626H954M870 672H942"/>
+    <path d="M1002 718 1064 626 1126 718"/>
+    <path d="M1165 626H1265M1215 626V718"/>
+    <path d="M1300 626H1395M1300 672H1380M1300 718H1395"/>
+    <path d="M1520 642Q1495 622 1448 626 1400 631 1397 672 1400 713 1448 718 1495 722 1520 702"/>
+    <path d="M1562 626V718M1648 626V718M1562 672H1648"/>
+  </g>
+</svg>
