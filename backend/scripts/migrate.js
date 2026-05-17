@@ -1,6 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { createAdminConnection } = require("../config/db");
+const { createAdminConnection, database } = require("../config/db");
+
+function escapeIdentifier(identifier) {
+  return `\`${String(identifier).replace(/`/g, "``")}\``;
+}
 
 async function columnExists(connection, tableName, columnName) {
   const [rows] = await connection.execute(
@@ -17,11 +21,12 @@ async function columnExists(connection, tableName, columnName) {
 async function main() {
   const connection = await createAdminConnection();
   try {
-    await connection.query(`USE ${process.env.DB_NAME || "class_attendance_system"}`);
+    await connection.query(`USE ${escapeIdentifier(database)}`);
 
     if (!await columnExists(connection, "students", "profile_photo")) {
       const migrationPath = path.join(__dirname, "..", "..", "database", "migrations", "001_student_profile_photo.sql");
-      const migration = fs.readFileSync(migrationPath, "utf8");
+      const migration = fs.readFileSync(migrationPath, "utf8")
+        .replace(/USE class_attendance_system;/i, `USE ${escapeIdentifier(database)};`);
       await connection.query(migration);
       console.log("Applied migration: student profile photo");
     } else {

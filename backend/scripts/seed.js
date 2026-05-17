@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const { query, transaction } = require("../config/db");
+const { pool, transaction } = require("../config/db");
 
 async function ensureUser(connection, { name, email, password, role }) {
   const [existing] = await connection.execute("SELECT id FROM users WHERE email = ?", [email]);
@@ -128,4 +128,6 @@ async function main() {
 main().catch(error => {
   console.error(error);
   process.exit(1);
+}).finally(async () => {
+  await pool.end();
 });
